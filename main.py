@@ -1,4 +1,5 @@
 import pygame
+pygame.init()
 import sys
 from settings import WIDTH, HEIGHT, FPS, TITLE
 from states.menu import MenuState
@@ -10,12 +11,6 @@ class Game:
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN)
         pygame.display.set_caption('Atlas Rising')
         self.clock = pygame.time.Clock()
-
-        #data all states share
-        self.lives = 3
-        self.score = 0
-        self.questions_asked = 0 
-        self.correct_answers = 0
 
         self.state = MenuState(self) # <----- starting state.
     
